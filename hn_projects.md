@@ -4,6 +4,11 @@ The latest [Ask HN: What are you working on](https://news.ycombinator.com/item?i
 
 <img width="1208" alt="image" src="https://github.com/user-attachments/assets/769bd9cc-acc0-4f3f-b818-660a01963505">
 
+You can download the dataset as a CSV here: https://github.com/getomni-ai/datasets/blob/main/hn_projects_dataset.csv
+
+Or query directly with SQL using the connection string included below.
+
+
 ## Getting the initial data set
 
 I wrote a quick scraper for the HN comments. Just pulling every top level comment along with its replies as a nested object.
@@ -159,6 +164,10 @@ Looking at the `one_liner` column sorted by `id`. The top post was the [DIY Bike
 
 <img width="1022" alt="image" src="https://github.com/user-attachments/assets/cd7b2502-9f26-405d-9f5f-2965564f1c55">
 
+
+## Still digging in
+
+I've only been playing with the data for a couple hours, so still some interesting items I want to pull out. If anyone has some thoughts on new columns to add, just drop me a note! (tyler@getomni.ai)
 
 
 
