@@ -8,6 +8,16 @@ You can download the dataset as a CSV here: https://github.com/getomni-ai/datase
 
 Or query directly with SQL using the connection string included below.
 
+```
+HOST=
+PORT=5432
+DATABASE=
+USER=
+PASSWORD=
+TABLE=
+```
+Note this is a temporary table with read only permissions. 
+
 
 ## Getting the initial data set
 
@@ -49,17 +59,6 @@ Example setup:
 ## Analyzing the results
 
 All the results are stored in a Postgres DB. So we can write SQL for all the analyzis. And plug into existing tools like Metabase for some visualizations.
-
-If you want to write some queries yourself, you can use the following credentials: 
-```
-HOST=
-PORT=5432
-DATABASE=
-USER=
-PASSWORD=
-TABLE=
-```
-Note this is a temporary table with read only permissions. 
 
 
 ### What's the breakdown of project type
@@ -153,7 +152,7 @@ select
     ROUND(AVG(((select count from total_comments)::int - id::int)), 0) popularity,
     ROUND(avg(reply_count::int), 2) reply_count
 from hn_projects_august
-group by 1 order by 2 desc;
+group by 1 order by 3 desc;
 ```
 
 <img width="720" alt="image" src="https://github.com/user-attachments/assets/b21fb2bf-1220-42d8-99ba-9e0d9d6f5aee">
