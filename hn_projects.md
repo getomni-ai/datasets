@@ -9,12 +9,12 @@ You can download the dataset as a CSV here: https://github.com/getomni-ai/datase
 Or query directly with SQL using the connection string included below.
 
 ```
-HOST=
-PORT=5432
-DATABASE=
-USER=
-PASSWORD=
-TABLE=
+HOST=aws-0-us-east-1.pooler.supabase.com
+PORT=6543
+DATABASE=postgres
+USER=postgres.raeysmhjbudociwvbwre
+PASSWORD=!HZRdGLiiFC5iRj
+TABLE=hn_projects_august
 ```
 Note this is a temporary table with read only permissions. 
 
