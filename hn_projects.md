@@ -64,7 +64,7 @@ select project_category, count(*) from hn_projects_august group by 1 order by 2 
 <img width="361" alt="image" src="https://github.com/user-attachments/assets/e068599b-d661-4ada-8b8c-0d2ef15999a9">
 
 
-### How friendly were the replies
+## How friendly were the replies
 
 Reply sentiment was judged on a 0 to 2 scale (with 0 being the most negative). The overall result was `1.57`, so largely positive.
 ```sql
@@ -72,6 +72,7 @@ select avg(reply_sentiment::float) from hn_projects_august
 where reply_sentiment is not null;
 ```
 
+### Sentiment by Category
 How does that break down by the `project_category`. Do HN commenters favor personal projects over startups?
 
 ```sql
@@ -87,7 +88,30 @@ The answer is yes! Commenters favor self improvement posts the most, and startup
 <img width="434" alt="image" src="https://github.com/user-attachments/assets/73673615-5c4d-41e4-ae0d-df2a08b2df0f">
 
 
+### Sentiment by Open Source
+The same query can be applies on the `is_open_source` classification with obvious results.
 
+```sql
+SELECT ROUND(CAST(AVG(reply_sentiment::float) AS numeric), 2) AS avg_sentiment, is_open_source
+FROM hn_projects_august
+WHERE reply_sentiment IS NOT NULL
+GROUP BY is_open_source
+ORDER BY 1 DESC;
+```
+
+<img width="419" alt="image" src="https://github.com/user-attachments/assets/84f4bc2d-4a95-45ed-b648-423b55a9f209">
+
+### Sentiment by is_ai
+Surprisingly for HN, the AI projects were favored slightly ahead of non AI projects: 
+```
+SELECT ROUND(CAST(AVG(reply_sentiment::float) AS numeric), 2) AS avg_sentiment, ai_project
+FROM hn_projects_august
+WHERE reply_sentiment IS NOT NULL
+GROUP BY ai_project
+ORDER BY 1 DESC;
+```
+
+<img width="376" alt="image" src="https://github.com/user-attachments/assets/11e23063-ac42-45b8-b20c-87702a43190f">
 
 
 
