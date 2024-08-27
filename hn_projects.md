@@ -17,7 +17,7 @@ PASSWORD=!HZRdGLiiFC5iRj
 TABLE=hn_projects_august
 ```
 
-Full list of all the Open Source projects is at the end.
+Full list of all the Open Source projects is [at the end](https://github.com/getomni-ai/datasets/blob/main/hn_projects.md#all-the-open-source-projects).
 
 
 ## Getting the initial data set
